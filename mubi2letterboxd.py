@@ -93,7 +93,7 @@ class Widget(QWidget):
 
     @staticmethod
     def save_csv_file(csv_rows, filename):
-        with open(filename, mode="w") as csv_file:
+        with open(filename, mode="w", encoding='utf8', newline='') as csv_file:
             csv_writer = csv.writer(csv_file, delimiter=",", quotechar='"')
             csv_writer.writerow(["tmdbID", "Title", "Year", "Directors", "Rating", "WatchedDate", "Review"])
             csv_writer.writerows(csv_rows)
